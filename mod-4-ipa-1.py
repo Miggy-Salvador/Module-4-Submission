@@ -75,13 +75,13 @@ def tic_tac_toe(board):
             final_string_horizontal=" ".join(map(str,final_set_horizontal))
             return (final_string_horizontal)
         
-    for vertical in board:
+    for vertical in zip(*board):
             if len(set(vertical))==1:
                 final_set_vertical=(set(vertical))
                 final_string_vertical=" ".join(map(str,final_set_vertical))
                 return (final_string_vertical)
         
-    if len(set([board[(len(host)-1)-c][c] for c,host in enumerate(board)]))==1: #down-up
+    if len(set([board[(len(host)-1)-c][c] for c,host in enumerate(board)]))==1:
             final_diagonal_1= (set([board[(len(host)-1)-c][c] for c,host in enumerate(board)]))
             final_string_diagonal_1=" ".join(map(str,final_diagonal_1))
             return (final_string_diagonal_1)
